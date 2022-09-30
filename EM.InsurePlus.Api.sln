@@ -1,0 +1,103 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EM.InsurePlus.Api", "EM.Insureplus.api\Deploy\EM.InsurePlus.Api.csproj", "{B8E336B2-780A-49D0-95F3-99B15DB3753F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EM.InsurePlus.Common", "EM.Insureplus.api\Shared\EM.InsurePlus.Common\EM.InsurePlus.Common.csproj", "{D1FD089D-BBF4-4650-8911-ECC196DFFF71}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EM.InsurePlus.Ioc", "EM.Insureplus.api\Shared\EM.InsurePlus.Ioc\EM.InsurePlus.Ioc.csproj", "{539A3EDB-236A-43BE-8900-58AD4A63BFDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{61758B8A-49AA-482E-8C2D-8BC4F41AA894}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Services", "Business Services", "{A8F9C146-7893-469E-AFDB-9611A7FF1A11}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EM.InsurePlus.Services", "EM.Insureplus.api\Business Services\EM.InsurePlus.Services\EM.InsurePlus.Services.csproj", "{86BE08DC-06B4-418C-B300-8AA72EB6D2EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EM.InsurePlus.Services.Contract", "EM.Insureplus.api\Business Services\EM.InsurePlus.Services.Contract\EM.InsurePlus.Services.Contract.csproj", "{64349E97-67EC-4721-8D9D-600AE57A1A49}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EM.InsurePlus.Services.Models", "EM.Insureplus.api\Business Services\EM.InsurePlus.Services.Models\EM.InsurePlus.Services.Models.csproj", "{11EE5113-A3DA-4725-94CB-F2A38F71A4FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Services", "Data Services", "{580D6C79-5658-40D9-A4BE-CFE0559087AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EM.InsurePlus.Data", "EM.Insureplus.api\Data Services\EM.InsurePlus.Data\EM.InsurePlus.Data.csproj", "{861A1BF1-81AA-48C4-B74C-3A19F0CF95DC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EM.InsurePlus.Contract", "EM.Insureplus.api\Data Services\EM.InsurePlus.Data.Contract\EM.InsurePlus.Contract.csproj", "{B69D4EA4-FFE3-4902-A84F-A50CB5A409D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EM.InsurePlus.Data.Models", "EM.Insureplus.api\Data Services\EM.InsurePlus.Data.Models\EM.InsurePlus.Data.Models.csproj", "{391F85BB-5A04-4BB2-8A8A-D87FE70FA77D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EM.InsurePlus.Repository", "EM.Insureplus.api\Data Services\EM.InsurePlus.Repository\EM.InsurePlus.Repository.csproj", "{BA4B2023-D018-4BD0-AE74-B8EF98846BC9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EM.InsurePlus.Repository.Contract", "EM.Insureplus.api\Data Services\EM.InsurePlus.Repository.Contract\EM.InsurePlus.Repository.Contract.csproj", "{7CB53F12-0D3A-45ED-9378-40F0661BBE6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8E336B2-780A-49D0-95F3-99B15DB3753F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8E336B2-780A-49D0-95F3-99B15DB3753F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8E336B2-780A-49D0-95F3-99B15DB3753F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8E336B2-780A-49D0-95F3-99B15DB3753F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1FD089D-BBF4-4650-8911-ECC196DFFF71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1FD089D-BBF4-4650-8911-ECC196DFFF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1FD089D-BBF4-4650-8911-ECC196DFFF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1FD089D-BBF4-4650-8911-ECC196DFFF71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{539A3EDB-236A-43BE-8900-58AD4A63BFDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{539A3EDB-236A-43BE-8900-58AD4A63BFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{539A3EDB-236A-43BE-8900-58AD4A63BFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{539A3EDB-236A-43BE-8900-58AD4A63BFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86BE08DC-06B4-418C-B300-8AA72EB6D2EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86BE08DC-06B4-418C-B300-8AA72EB6D2EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86BE08DC-06B4-418C-B300-8AA72EB6D2EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86BE08DC-06B4-418C-B300-8AA72EB6D2EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64349E97-67EC-4721-8D9D-600AE57A1A49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64349E97-67EC-4721-8D9D-600AE57A1A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64349E97-67EC-4721-8D9D-600AE57A1A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64349E97-67EC-4721-8D9D-600AE57A1A49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11EE5113-A3DA-4725-94CB-F2A38F71A4FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11EE5113-A3DA-4725-94CB-F2A38F71A4FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11EE5113-A3DA-4725-94CB-F2A38F71A4FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11EE5113-A3DA-4725-94CB-F2A38F71A4FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{861A1BF1-81AA-48C4-B74C-3A19F0CF95DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{861A1BF1-81AA-48C4-B74C-3A19F0CF95DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{861A1BF1-81AA-48C4-B74C-3A19F0CF95DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{861A1BF1-81AA-48C4-B74C-3A19F0CF95DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B69D4EA4-FFE3-4902-A84F-A50CB5A409D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B69D4EA4-FFE3-4902-A84F-A50CB5A409D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B69D4EA4-FFE3-4902-A84F-A50CB5A409D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B69D4EA4-FFE3-4902-A84F-A50CB5A409D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391F85BB-5A04-4BB2-8A8A-D87FE70FA77D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391F85BB-5A04-4BB2-8A8A-D87FE70FA77D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391F85BB-5A04-4BB2-8A8A-D87FE70FA77D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391F85BB-5A04-4BB2-8A8A-D87FE70FA77D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA4B2023-D018-4BD0-AE74-B8EF98846BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA4B2023-D018-4BD0-AE74-B8EF98846BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA4B2023-D018-4BD0-AE74-B8EF98846BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA4B2023-D018-4BD0-AE74-B8EF98846BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CB53F12-0D3A-45ED-9378-40F0661BBE6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB53F12-0D3A-45ED-9378-40F0661BBE6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CB53F12-0D3A-45ED-9378-40F0661BBE6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CB53F12-0D3A-45ED-9378-40F0661BBE6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D1FD089D-BBF4-4650-8911-ECC196DFFF71} = {61758B8A-49AA-482E-8C2D-8BC4F41AA894}
+		{539A3EDB-236A-43BE-8900-58AD4A63BFDB} = {61758B8A-49AA-482E-8C2D-8BC4F41AA894}
+		{86BE08DC-06B4-418C-B300-8AA72EB6D2EF} = {A8F9C146-7893-469E-AFDB-9611A7FF1A11}
+		{64349E97-67EC-4721-8D9D-600AE57A1A49} = {A8F9C146-7893-469E-AFDB-9611A7FF1A11}
+		{11EE5113-A3DA-4725-94CB-F2A38F71A4FA} = {A8F9C146-7893-469E-AFDB-9611A7FF1A11}
+		{861A1BF1-81AA-48C4-B74C-3A19F0CF95DC} = {580D6C79-5658-40D9-A4BE-CFE0559087AC}
+		{B69D4EA4-FFE3-4902-A84F-A50CB5A409D5} = {580D6C79-5658-40D9-A4BE-CFE0559087AC}
+		{391F85BB-5A04-4BB2-8A8A-D87FE70FA77D} = {580D6C79-5658-40D9-A4BE-CFE0559087AC}
+		{BA4B2023-D018-4BD0-AE74-B8EF98846BC9} = {580D6C79-5658-40D9-A4BE-CFE0559087AC}
+		{7CB53F12-0D3A-45ED-9378-40F0661BBE6B} = {580D6C79-5658-40D9-A4BE-CFE0559087AC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DD7E95A-95CC-41D8-AD8B-C73DBDA5CDE4}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Local\**" />
+    <EmbeddedResource Remove="Local\**" />
+    <None Remove="Local\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="SubscriptionService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data Services\Evicio.ILearnIt.Repository.Contract\EM.InsurePlus.Repository.Contract.csproj" />
+    <ProjectReference Include="..\..\Shared\Evicio.ILearnIt.Common\EM.InsurePlus.Common.csproj" />
+    <ProjectReference Include="..\Evicio.ILearnIt.Services.Contract\EM.InsurePlus.Services.Contract.csproj" />
+    <ProjectReference Include="..\Evicio.ILearnIt.Services.Models\EM.InsurePlus.Services.Models.csproj" />
+  </ItemGroup>
+
+</Project>
