@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EM.InsurePlus.Views.ToastMessage">
+  <ContentView.Content>
+
+        <Label BackgroundColor="Red" Margin="0,0,0,1" Grid.Row="0"
+              Text="No Internet"
+              TextColor="White"
+               FontSize="16"
+              HorizontalTextAlignment="Center"
+              VerticalTextAlignment="Center"
+              HorizontalOptions="FillAndExpand"
+              IsVisible="{Binding IsConnectivityMessageVisibile,Mode=TwoWay}">
+
+            <Label.FontSize>
+                <OnIdiom x:TypeArguments="x:Double"
+                                                 Phone="11"
+                                                 Tablet="22"/>
+            </Label.FontSize>
+
+        </Label>
+
+    </ContentView.Content>
+</ContentView>

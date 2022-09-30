@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"           
+             x:Class="EM.InsurePlus.Views.VehicleMakePopupView">
+    <pages:PopupPage.Animation>
+        <animations:MoveAnimation PositionIn="Center" PositionOut="Center" DurationIn="400"
+          DurationOut="100" EasingIn="SpringIn" EasingOut="Linear" HasBackgroundAnimation="True" />
+    </pages:PopupPage.Animation>
+    <ContentPage.Content>
+        <Frame HasShadow="True" Padding="0.5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Frame.HeightRequest>
+                <OnIdiom x:TypeArguments="x:Double">
+                    <OnIdiom.Phone>280</OnIdiom.Phone>
+                    <OnIdiom.Tablet>320</OnIdiom.Tablet>
+                </OnIdiom>
+            </Frame.HeightRequest>
+
+            <Frame.Margin>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>40</OnIdiom.Phone>
+                    <OnIdiom.Tablet>80</OnIdiom.Tablet>
+                </OnIdiom>
+            </Frame.Margin>
+
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#1C3142" RowSpacing="0">
+
+                <Grid.HeightRequest>
+                    <OnIdiom x:TypeArguments="x:Double" Phone="380" Tablet="400"/>
+                </Grid.HeightRequest>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="9.5*" />
+                </Grid.RowDefinitions>
+
+                <RelativeLayout Margin="0,2,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                    <StackLayout  Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                        <Label Text="Makes" Margin="5,5,0,0"
+                                TextColor="White"  HorizontalOptions="CenterAndExpand" />
+
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Margin="0,3,5,0"
+                                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1, Constant=0}">
+
+                        <Image Source="close_circle_white.png" HeightRequest="30"  WidthRequest="30"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ClosePopupTapCommand}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+                </RelativeLayout>
+
+
+                <StackLayout Grid.Row="1" Margin="0,20,-8,-2" BackgroundColor="White">
+                    <CollectionView x:Name="vechilesCollectionView" ItemsSource="{Binding Vehicles}" HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand" RemainingItemsThresholdReachedCommand="{Binding ItemTresholdReachedCommand}"
+                            RemainingItemsThreshold="{Binding ItemTreshold}">
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid x:Name="Item" >
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Margin="5,0,0,0" Text="{Binding Name}"  Grid.Row="0" Grid.Column="0"  VerticalTextAlignment="Center" LineBreakMode="WordWrap" FontSize="14">
+
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer BindingContext="{Binding Source={x:Reference vechilesCollectionView}, Path=BindingContext}"   
+                                                    Command="{Binding VehicleTypeItemSelectedCommand}" CommandParameter="{Binding Source={x:Reference Item},
+                                                    Path=BindingContext}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+
+               
+
+            </Grid>
+
+        </Frame>
+    </ContentPage.Content>
+</pages:PopupPage>

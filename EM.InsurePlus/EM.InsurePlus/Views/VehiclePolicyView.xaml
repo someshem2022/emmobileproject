@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EM.InsurePlus.Views.VehiclePolicyView"
+             Title="Mortor Insurence"            
+             xmlns:templates="clr-namespace:EM.InsurePlus.Views"
+             xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransform="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"    
+             BackgroundColor="#11436d">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Name="MortorPolicyList" Order="Default" Icon="offline_list.png" 
+                     Text="Printer Status" Priority="0" Command="{Binding OfflinePoliciesCommand}" />
+
+       
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EntryTextStyle" 
+                   TargetType="Entry"
+                   >
+                <Setter Property="TextColor" Value="White" />                  
+
+                <Setter Property="FontSize">
+                    <Setter.Value>
+                        <OnIdiom x:TypeArguments="x:Double"
+                                                 Phone="15"
+                                                 Tablet="18"/>
+                    </Setter.Value>
+                </Setter>
+
+            </Style>
+            <Style x:Key="EntryStyle" 
+                   TargetType="Entry"
+                   >
+                <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+                <Setter Property="PlaceholderColor" Value="Gray" />
+                <Setter Property="FontSize" Value="16" />
+
+            </Style>
+            <Style x:Key="ErrorStyle" 
+                   TargetType="Label"                   >
+                <Setter Property="TextColor" Value="Red" />
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="FontAttributes" Value="Bold" />
+
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>       
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="14*" />
+                <RowDefinition Height="8*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="3*" />
+                </Grid.RowDefinitions>
+                <!--<Label BackgroundColor="Red" Margin="0,0,0,1" Grid.Row="0"
+              Text="No Internet"
+              TextColor="White"
+               FontSize="16"
+              HorizontalTextAlignment="Center"
+              VerticalTextAlignment="Center"
+              HorizontalOptions="FillAndExpand"
+              IsVisible="{Binding IsConnectivityMessageVisibile,Mode=TwoWay}">
+
+                    <Label.FontSize>
+                        <OnIdiom x:TypeArguments="x:Double"
+                                                 Phone="11"
+                                                 Tablet="22"/>
+                    </Label.FontSize>
+
+                </Label>-->
+
+                <templates:ToastMessage/>
+
+            </Grid>
+           
+            <StackLayout Grid.Row="1" Margin="6,0,6,0">
+
+                <Frame BackgroundColor="White" Padding="8" CornerRadius="5" HasShadow="False" OutlineColor="White"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5*" />
+                            <RowDefinition Height="5*" />
+                            <RowDefinition Height="5*" />
+                            <RowDefinition Height="5*" />
+                            <RowDefinition Height="5*" />
+                        </Grid.RowDefinitions>
+
+                        <StackLayout  Grid.Row="0" Orientation="Horizontal">
+                            <Entry HorizontalOptions="FillAndExpand" Text="{Binding FirstName.Value,Mode=TwoWay}" x:Name="nameEntry" Placeholder="First Name" Style="{StaticResource EntryStyle}"/>
+                            <Label Text="*" Style="{StaticResource ErrorStyle}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding FirstName.IsValid,Mode=TwoWay}" Value="False">
+                                        <Setter Property="IsVisible" Value="True" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label" Binding="{Binding FirstName.IsValid,Mode=TwoWay}" Value="True">
+                                        <Setter Property="IsVisible" Value="False" />
+                                    </DataTrigger>
+
+                                </Label.Triggers>
+                            </Label>
+
+                        </StackLayout>
+
+                        <StackLayout  Grid.Row="1" Orientation="Horizontal">
+                            <Entry HorizontalOptions="FillAndExpand" Text="{Binding LastName.Value,Mode=TwoWay}" x:Name="lastNameEntry" Placeholder="Last Name" Style="{StaticResource EntryStyle}"/>
+                            <Label Text="*" Style="{StaticResource ErrorStyle}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding LastName.IsValid,Mode=TwoWay}" Value="False">
+                                        <Setter Property="IsVisible" Value="True" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label" Binding="{Binding LastName.IsValid,Mode=TwoWay}" Value="True">
+                                        <Setter Property="IsVisible" Value="False" />
+                                    </DataTrigger>
+
+                                </Label.Triggers>
+                            </Label>
+
+                        </StackLayout>
+
+                        <StackLayout  Grid.Row="2" Orientation="Horizontal">
+                            <Entry HorizontalOptions="FillAndExpand" Text="{Binding Nic.Value,Mode=TwoWay}" x:Name="nicEntry" Placeholder="NIC" Style="{StaticResource EntryStyle}"/>
+                            <Label Text="*" Style="{StaticResource ErrorStyle}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Nic.IsValid,Mode=TwoWay}" Value="False">
+                                        <Setter Property="IsVisible" Value="True" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Nic.IsValid,Mode=TwoWay}" Value="True">
+                                        <Setter Property="IsVisible" Value="False" />
+                                    </DataTrigger>
+
+                                </Label.Triggers>
+                            </Label>
+
+                        </StackLayout>
+
+                        <StackLayout  Grid.Row="3" Orientation="Horizontal">
+                            <Entry HorizontalOptions="FillAndExpand" Text="{Binding Address.Value,Mode=TwoWay}" x:Name="addressEntry" Placeholder="Address" Style="{StaticResource EntryStyle}"/>
+                            <Label Text="*" Style="{StaticResource ErrorStyle}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Address.IsValid,Mode=TwoWay}" Value="False">
+                                        <Setter Property="IsVisible" Value="True" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Address.IsValid,Mode=TwoWay}" Value="True">
+                                        <Setter Property="IsVisible" Value="False" />
+                                    </DataTrigger>
+
+                                </Label.Triggers>
+                            </Label>
+
+                        </StackLayout>
+
+                        <StackLayout  Grid.Row="4" Orientation="Horizontal">
+                            <Entry HorizontalOptions="FillAndExpand" Text="{Binding Phone.Value,Mode=TwoWay}" x:Name="phoneEntry" Placeholder="Phone" Style="{StaticResource EntryStyle}"/>
+                            <Label Text="*" Style="{StaticResource ErrorStyle}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Phone.IsValid,Mode=TwoWay}" Value="False">
+                                        <Setter Property="IsVisible" Value="True" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Phone.IsValid,Mode=TwoWay}" Value="True">
+                                        <Setter Property="IsVisible" Value="False" />
+                                    </DataTrigger>
+
+                                </Label.Triggers>
+                            </Label>
+
+                        </StackLayout>
+                        
+                    </Grid>
+                </Frame>
+            </StackLayout>
+          
+            <StackLayout Grid.Row="2" Margin="6,0,6,0">
+                <Frame BackgroundColor="White" Padding="8" CornerRadius="5" HasShadow="False" OutlineColor="White"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4*" />
+                            <RowDefinition Height="4*" />
+                            <RowDefinition Height="4*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+
+
+                        <StackLayout  Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                            <Entry HorizontalOptions="FillAndExpand" Text="{Binding LicenePlate.Value,Mode=TwoWay}" x:Name="licecncePlateEntry" Placeholder="Licence Plate" Style="{StaticResource EntryStyle}"/>
+                            <Label Text="*" Style="{StaticResource ErrorStyle}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding LicenePlate.IsValid,Mode=TwoWay}" Value="False">
+                                        <Setter Property="IsVisible" Value="True" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label" Binding="{Binding LicenePlate.IsValid,Mode=TwoWay}" Value="True">
+                                        <Setter Property="IsVisible" Value="False" />
+                                    </DataTrigger>
+
+                                </Label.Triggers>
+                            </Label>
+
+                        </StackLayout>
+                        <!--<Entry Grid.Row="0" Grid.Column="0" Placeholder="Licence Plate"  Style="{StaticResource EntryTextStyle}"/>-->
+                        <!-- Make -->
+                        <RelativeLayout  Grid.Row="1" Grid.Column="0">
+                            <StackLayout 
+                                        
+                          RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=8}"
+                          RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=8}" 
+                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-6}"
+                          Orientation="Horizontal">
+
+                                <Label Text="{Binding Make.Value,Mode=TwoWay}" FontSize="16" 
+                                                   HorizontalOptions="FillAndExpand" 
+                                                   VerticalTextAlignment="Center"
+                                                   HorizontalTextAlignment="Start"
+                                                   LineBreakMode="TailTruncation">
+
+                                    <Label.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="Android">
+                                                <OnIdiom x:TypeArguments="x:Double"
+                                                                             Phone="35"
+                                                                             Tablet="50"/>
+                                            </On>
+                                        </OnPlatform>
+                                    </Label.HeightRequest>
+
+                                </Label>
+                                <Image Source="dropdown_black.png" Scale="0.7"></Image>
+                                <Label Text="*" Style="{StaticResource ErrorStyle}">
+                                    <Label.Triggers>
+                                        <DataTrigger TargetType="Label" Binding="{Binding Make.IsValid,Mode=TwoWay}" Value="False">
+                                            <Setter Property="IsVisible" Value="True" />
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding Make.IsValid,Mode=TwoWay}" Value="True">
+                                            <Setter Property="IsVisible" Value="False" />
+                                        </DataTrigger>
+
+                                    </Label.Triggers>
+                                </Label>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding OpenMakeCommand}" CommandParameter="1"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </RelativeLayout>
+                        <!-- Make -->
+
+                        <!-- Model -->
+                        <StackLayout  Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                            <Entry HorizontalOptions="FillAndExpand" Text="{Binding Model.Value,Mode=TwoWay}" x:Name="modelEntry" Placeholder="Model" Style="{StaticResource EntryStyle}"/>
+                            <Label Text="*" Style="{StaticResource ErrorStyle}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Model.IsValid,Mode=TwoWay}" Value="False">
+                                        <Setter Property="IsVisible" Value="True" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Model.IsValid,Mode=TwoWay}" Value="True">
+                                        <Setter Property="IsVisible" Value="False" />
+                                    </DataTrigger>
+
+                                </Label.Triggers>
+                            </Label>
+
+                        </StackLayout>
+                        <!--<Entry Grid.Row="1" Grid.Column="1" Placeholder="Model"  Style="{StaticResource EntryTextStyle}"/>-->
+                        <!-- Model -->
+
+                        <!-- Color -->
+                        <RelativeLayout  Grid.Row="2" Grid.Column="0">
+                            <StackLayout 
+                                        
+                          RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=8}"
+                          RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=8}" 
+                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-6}"
+                          Orientation="Horizontal">
+
+                                <Label Text="{Binding Color.Value,Mode=TwoWay}"  FontSize="16"
+                                                   HorizontalOptions="FillAndExpand" 
+                                                   VerticalTextAlignment="Center"
+                                                   HorizontalTextAlignment="Start"
+                                                   LineBreakMode="TailTruncation">
+
+                                    <Label.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="Android">
+                                                <OnIdiom x:TypeArguments="x:Double"
+                                                                             Phone="35"
+                                                                             Tablet="50"/>
+                                            </On>
+                                        </OnPlatform>
+                                    </Label.HeightRequest>
+
+                                </Label>
+                                <Image Source="dropdown_black.png" Scale="0.7"></Image>
+                                <Label Text="*" Style="{StaticResource ErrorStyle}">
+                                    <Label.Triggers>
+                                        <DataTrigger TargetType="Label" Binding="{Binding Color.IsValid,Mode=TwoWay}" Value="False">
+                                            <Setter Property="IsVisible" Value="True" />
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding Color.IsValid,Mode=TwoWay}" Value="True">
+                                            <Setter Property="IsVisible" Value="False" />
+                                        </DataTrigger>
+
+                                    </Label.Triggers>
+                                </Label>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding OpenColorCommand}" CommandParameter="1"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </RelativeLayout>
+                        <!-- Color -->
+
+                        <!-- Type -->
+                        <!--<RelativeLayout  Grid.Row="2" Grid.Column="1">
+                            <StackLayout 
+                                        
+                          RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=8}"
+                          RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=8}" 
+                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-6}"
+                          Orientation="Horizontal">
+
+                                <Label Text="Type"  
+                                                   HorizontalOptions="FillAndExpand" 
+                                                   VerticalTextAlignment="Center"
+                                                   HorizontalTextAlignment="Start"
+                                                   LineBreakMode="TailTruncation">
+
+                                    <Label.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="Android">
+                                                <OnIdiom x:TypeArguments="x:Double"
+                                                                             Phone="35"
+                                                                             Tablet="50"/>
+                                            </On>
+                                        </OnPlatform>
+                                    </Label.HeightRequest>
+
+                                </Label>
+                                <Image Source="dropdown_black.png" Scale="0.7"></Image>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding OpenMakeCommand}" CommandParameter="1"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </RelativeLayout>-->
+                        <!-- Type -->
+
+                    </Grid>
+                </Frame>
+            </StackLayout>
+            <StackLayout Grid.Row="3" Margin="6,0,6,0">
+                <Frame BackgroundColor="White" Padding="8" CornerRadius="5" HasShadow="False" OutlineColor="White"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10*" />
+                            <ColumnDefinition Width="10*" />                          
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5*" />                                                  
+                        </Grid.RowDefinitions>
+                        <Frame  Grid.Column="0" Grid.Row="0"  BackgroundColor="Black" Padding="4" CornerRadius="6" HasShadow="False" OutlineColor="White"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <RelativeLayout VerticalOptions="FillAndExpand">
+                                <Image  BackgroundColor="WhiteSmoke"
+                                              WidthRequest="50" HeightRequest="50" 
+                                              Aspect="AspectFill"
+                                              Source="{Binding ImgPickerSource1,Mode=TwoWay}"
+                                              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding AddImageCommand}" CommandParameter="3"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <!--<StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                                     IsVisible="{Binding IsImgSource3Visible}">
+                                    <Image Source="clear_image.png" HorizontalOptions="EndAndExpand" 
+                                                   VerticalOptions="Start" HeightRequest="20">
+
+                                    </Image>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ImageDeleteTapCommand}"
+                                                                      CommandParameter="Source3" />
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>-->
+                            </RelativeLayout>
+                        </Frame>
+                    </Grid>
+                </Frame>
+                <Grid Margin="0,3,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Frame Grid.Column="1" BackgroundColor="Green" Margin="8,5,0,0" Padding="8" CornerRadius="5" HasShadow="False" OutlineColor="White"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Button  Text="Save" TextColor="White" Background="Transparent" Command="{Binding SubmitPolicyCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="2" BackgroundColor="Gray" Margin="8,5,0,0" Padding="8" CornerRadius="5" HasShadow="False" OutlineColor="White"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Button  Text="Clear" TextColor="White" Background="Transparent" Command="{Binding ClearCommand}"/>
+                    </Frame>
+
+                </Grid>
+            </StackLayout>
+          
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EM.InsurePlus.Views.RegisterView"
+             Background="#11436d">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BorderWidth" Value="0.45" />
+                <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="WhiteSmoke"/>
+            </Style>
+            <Style x:Key="RegisterButtonStyle" TargetType="Button" BasedOn="{StaticResource buttonStyle}">
+                <Setter Property="FontSize" Value="22" />
+            </Style>
+            <Style x:Key="EntryStyle" 
+                   TargetType="Entry"
+                   >
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize" Value="16" />
+
+            </Style>
+            <Style x:Key="ErrorStyle" 
+                   TargetType="Label"                   >
+                <Setter Property="TextColor" Value="Yellow" />              
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="FontAttributes" Value="Bold" />
+
+            </Style>
+
+            <Style x:Key="ButtonStyle" 
+                   TargetType="Button"
+                   >
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="White" />
+
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" Margin="0,5,0,0">
+                <Image Source="parking.png" HeightRequest="80" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="Talos Parking" FontSize="25" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+
+            <Grid Grid.Row="1" Margin="20,10,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="5*" />
+                </Grid.RowDefinitions>
+
+                <StackLayout  Grid.Row="0" Orientation="Horizontal">
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Name.Value,Mode=TwoWay}" x:Name="nameEntry" Placeholder="Name" Style="{StaticResource EntryStyle}"/>
+                    <Label Text="*" Style="{StaticResource ErrorStyle}">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding Name.IsValid,Mode=TwoWay}" Value="False">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label" Binding="{Binding Name.IsValid,Mode=TwoWay}" Value="True">
+                                <Setter Property="IsVisible" Value="False" />
+                            </DataTrigger>
+
+                        </Label.Triggers>
+                    </Label>
+
+                </StackLayout>
+
+
+
+
+                <Editor Placeholder="Address"  Style="{StaticResource EntryStyle}" Grid.Row="1"/>
+
+                <Entry Placeholder="Licence Plate"  Style="{StaticResource EntryStyle}" Grid.Row="2"/>
+
+
+                <StackLayout  Grid.Row="3" Orientation="Horizontal" >
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Phone.Value,Mode=TwoWay}" x:Name="phoneEntry" Placeholder="Mobile" Style="{StaticResource EntryStyle}"/>
+                    <Label Text="*" Style="{StaticResource ErrorStyle}">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding Phone.IsValid,Mode=TwoWay}" Value="False">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label" Binding="{Binding Phone.IsValid,Mode=TwoWay}" Value="True">
+                                <Setter Property="IsVisible" Value="False" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                </StackLayout>
+
+                <!--<Entry Placeholder="Mobile"  Style="{StaticResource EntryStyle}" Grid.Row="3"/>-->
+
+                <!--<Entry Placeholder="Email"  Style="{StaticResource EntryStyle}" Grid.Row="4"/>-->
+                <StackLayout  Grid.Row="4" Orientation="Horizontal" >
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Email.Value,Mode=TwoWay}" x:Name="emailEntry" Placeholder="Email" Style="{StaticResource EntryStyle}"/>
+                    <Label Text="*" Style="{StaticResource ErrorStyle}">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding Email.IsValid,Mode=TwoWay}" Value="False">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label" Binding="{Binding Email.IsValid,Mode=TwoWay}" Value="True">
+                                <Setter Property="IsVisible" Value="False" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                </StackLayout>
+
+                <StackLayout  Grid.Row="5" Orientation="Horizontal" >
+                    <Entry HorizontalOptions="FillAndExpand" IsPassword="True" Text="{Binding Password.Value,Mode=TwoWay}" x:Name="passwordEntry" Placeholder="Password" Style="{StaticResource EntryStyle}"/>
+                    <Label Text="*" Style="{StaticResource ErrorStyle}">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding Password.IsValid,Mode=TwoWay}" Value="False">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label" Binding="{Binding Password.IsValid,Mode=TwoWay}" Value="True">
+                                <Setter Property="IsVisible" Value="False" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                </StackLayout>
+
+
+                <StackLayout  Grid.Row="6" Orientation="Horizontal" >
+                    <Entry HorizontalOptions="FillAndExpand" IsPassword="True" Text="{Binding ConfirmPassword.Value,Mode=TwoWay}" x:Name="confirmPasswordEntry" Placeholder="Confirm Password" Style="{StaticResource EntryStyle}"/>
+                    <Label Text="*" Style="{StaticResource ErrorStyle}">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding ConfirmPassword.IsValid,Mode=TwoWay}" Value="False">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label" Binding="{Binding ConfirmPassword.IsValid,Mode=TwoWay}" Value="True">
+                                <Setter Property="IsVisible" Value="False" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                </StackLayout>
+
+                <!--<Entry Placeholder="Password" IsPassword="True"  Style="{StaticResource EntryStyle}" Grid.Row="5"/>-->
+
+                <!--<Entry Placeholder="Confirm Password" IsPassword="True"  Style="{StaticResource EntryStyle}" Grid.Row="6"/>-->
+
+
+
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.9*" />
+                    <ColumnDefinition Width="8.2*" />
+                    <ColumnDefinition Width="1.9*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1"
+                        AutomationId="btnlogin"                     
+                        Command="{Binding RegisterCommand}" 
+                        Text="Register"           
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand"                  
+                        Style="{StaticResource RegisterButtonStyle}">
+
+                </Button>
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

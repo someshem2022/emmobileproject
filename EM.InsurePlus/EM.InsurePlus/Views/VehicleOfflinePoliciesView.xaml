@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EM.InsurePlus.Views.VehicleOfflinePoliciesView"
+             xmlns:templates="clr-namespace:EM.InsurePlus.Views"
+             Title="Mortor  Insurence (Offline)">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="SyncData" Order="Default" Icon="sync_toolbar.png" Command="{Binding SyncDataCommand}"
+                      Priority="0"  />
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="8*" />             
+            </Grid.RowDefinitions>
+           
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="5*" />
+                    </Grid.ColumnDefinitions>               
+               
+            </Grid>
+
+            <templates:ToastMessage Grid.Row="0"/>
+
+            <StackLayout Grid.Row="1">
+                <CollectionView x:Name="offlinePoliciesView" ItemsSource="{Binding Policies}" HorizontalOptions="FillAndExpand" Margin="5,0,0,0"
+                            VerticalOptions="FillAndExpand" RemainingItemsThresholdReachedCommand="{Binding ItemTresholdReachedCommand}"
+                            RemainingItemsThreshold="{Binding ItemTreshold}">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid x:Name="Item" >
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*" />
+                                    <ColumnDefinition Width="5*" />
+                                    <ColumnDefinition Width="5*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Margin="5,0,0,0" Text="{Binding FirstName}"  Grid.Row="0" Grid.Column="0"  VerticalTextAlignment="Center" LineBreakMode="WordWrap" FontSize="16">
+
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer BindingContext="{Binding Source={x:Reference offlinePoliciesView}, Path=BindingContext}"   
+                                                    Command="{Binding VehicleTypeItemSelectedCommand}" CommandParameter="{Binding Source={x:Reference Item},
+                                                    Path=BindingContext}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <Label Margin="5,0,0,0" Text="{Binding LastName}"  Grid.Row="0" Grid.Column="1"  VerticalTextAlignment="Center" LineBreakMode="WordWrap" FontSize="16"/>
+
+                                <Label Margin="5,0,0,0" Text="{Binding LicencePlate}"  Grid.Row="0" Grid.Column="2"  VerticalTextAlignment="Center" LineBreakMode="WordWrap" FontSize="16"/>
+
+
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

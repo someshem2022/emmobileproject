@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             FlyoutLayoutBehavior="Popover"
+             xmlns:views="clr-namespace:EM.InsurePlus.Views"
+             Title="Talos Parking"
+             x:Class="EM.InsurePlus.Views.MainView">
+    <FlyoutPage.Flyout>
+        <views:MenuView Title="CTitle" BindingContext="{Binding MenuViewModel}"/>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <ContentPage 
+            BackgroundColor="Transparent" />
+    </FlyoutPage.Detail>
+
+</FlyoutPage>

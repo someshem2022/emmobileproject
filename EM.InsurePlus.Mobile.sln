@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EM.InsurePlus", "EM.InsurePlus\EM.InsurePlus\EM.InsurePlus.csproj", "{C2240DE2-EC67-4C24-AC22-63363EE121FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EM.InsurePlus.Android", "EM.InsurePlus\EM.InsurePlus.Android\EM.InsurePlus.Android.csproj", "{544C24A5-A0AA-4154-824D-500D9E04999F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2240DE2-EC67-4C24-AC22-63363EE121FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2240DE2-EC67-4C24-AC22-63363EE121FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2240DE2-EC67-4C24-AC22-63363EE121FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2240DE2-EC67-4C24-AC22-63363EE121FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{544C24A5-A0AA-4154-824D-500D9E04999F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{544C24A5-A0AA-4154-824D-500D9E04999F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{544C24A5-A0AA-4154-824D-500D9E04999F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{544C24A5-A0AA-4154-824D-500D9E04999F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{544C24A5-A0AA-4154-824D-500D9E04999F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{544C24A5-A0AA-4154-824D-500D9E04999F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DE65F44-3619-4D33-97F3-BE25B59DE1EE}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EM.InsurePlus.Views.HomeView"
+             Background="#11436d" Title="Insurance">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="OptionStyle" 
+                   TargetType="Label"
+                   >
+                <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*" />
+                <RowDefinition Height="70*" />
+                <RowDefinition Height="10*" />  
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1" Margin="5,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="5*" />
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Row="0" Grid.Column="0"  Margin="10,0,15,0"  BackgroundColor="White" Padding="8" CornerRadius="5" HasShadow="False" OutlineColor="White"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Margin="5,0,0,0" Source="ins_mortor.png" WidthRequest="50" HeightRequest="50"/>
+                        <Label Text="Mortor" Style="{StaticResource OptionStyle}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding VehiclePolicyCommand}"/>
+                    </Frame.GestureRecognizers>
+
+
+                </Frame>
+                <Frame Grid.Row="0"  Grid.Column="1" Margin="10,0,15,0"  BackgroundColor="White" Padding="8" CornerRadius="5" HasShadow="False" OutlineColor="White"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Margin="5,0,0,0" Source="ins_life.png" WidthRequest="50" HeightRequest="50"/>
+                        <Label Text="Life" Style="{StaticResource OptionStyle}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ReserveCommand}"/>
+                    </Frame.GestureRecognizers>
+
+                </Frame>
+
+                <Frame Grid.Row="1"  Grid.Column="0" Margin="10,0,15,0"  BackgroundColor="White" Padding="8" CornerRadius="5" HasShadow="False" OutlineColor="White"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Margin="5,0,0,0" Source="ins_health.png" WidthRequest="50" HeightRequest="50"/>
+                        <Label Text="Health" Style="{StaticResource OptionStyle}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ReserveCommand}"/>
+                    </Frame.GestureRecognizers>
+
+                </Frame>
+
+
+                <Frame Grid.Row="1"  Grid.Column="1" Margin="10,0,15,0"  BackgroundColor="White" Padding="8" CornerRadius="5" HasShadow="False" OutlineColor="White"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Margin="5,0,0,0" Source="ins_fire.png" WidthRequest="50" HeightRequest="50"/>
+                        <Label Text="Fire" Style="{StaticResource OptionStyle}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ReserveCommand}"/>
+                    </Frame.GestureRecognizers>
+
+                </Frame>
+
+                <Frame Grid.Row="2"  Grid.Column="0" Margin="10,0,15,0"  BackgroundColor="White" Padding="8" CornerRadius="5" HasShadow="False" OutlineColor="White"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Margin="5,0,0,0" Source="ins_marine.png" WidthRequest="50" HeightRequest="50"/>
+                        <Label Text="Marine" Style="{StaticResource OptionStyle}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ReserveCommand}"/>
+                    </Frame.GestureRecognizers>
+
+                </Frame>
+
+                <Frame Grid.Row="2"  Grid.Column="1" Margin="10,0,15,0"  BackgroundColor="White" Padding="8" CornerRadius="5" HasShadow="False" OutlineColor="White"
+                               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Margin="5,0,0,0" Source="ins_livestock.png" WidthRequest="50" HeightRequest="50"/>
+                        <Label Text="Livestock" Style="{StaticResource OptionStyle}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ReserveCommand}"/>
+                    </Frame.GestureRecognizers>
+
+                </Frame>
+            </Grid>
+             
+          
+
+        </Grid>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,47 @@
+﻿{
+    "colors": [
+
+        {
+          
+            "Name": "White",           
+            "Order": "1"
+        },
+        {
+            "Name": "Gray",
+            "Order": "2"
+        },
+        {
+            "Name": "Red",
+            "Order": "3"
+        },
+        {
+            "Name": "Blue",
+            "Order": "4"
+        },
+        {
+            "Name": "Brown",
+            "Order": "5"
+        },
+        {
+            "Name": "Green",
+            "Order": "6"
+        },
+        {
+            "Name": "Orange",
+            "Order": "7"
+        },
+        {
+            "Name": "Teal",
+            "Order": "8"
+        },
+        {
+            "Name": "Yellow",
+            "Order": "9"
+        },
+        {
+            "Name": "Purple",
+            "Order": "10"
+        }
+ 
+    ]
+}
